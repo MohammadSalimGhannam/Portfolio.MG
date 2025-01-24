@@ -79,6 +79,7 @@ const About = (props) => {
                         whileInView="onscreen"
                         viewport={{ once: true, amount: 0.5 }}
                         variants={rightPart}
+                        style={{overflow: 'hidden'}}
                     >
                     <SubTitle title='Skills'/>
                     <motion.div

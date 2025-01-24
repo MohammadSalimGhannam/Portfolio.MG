@@ -48,6 +48,9 @@ const Home = (props) => {
                 viewport={{ once: true, amount: 0.5 }}
                 variants={leftPart}
             >
+                <div className={styles.Profile}>
+                    <img src={img}/>
+                </div>
                 <h2 className={styles.Name}>MOHAMMAD GHANNAM</h2>
                 <p className={styles.jopTitle}>front-end Dev</p>
                 <div className={styles.Baio}>

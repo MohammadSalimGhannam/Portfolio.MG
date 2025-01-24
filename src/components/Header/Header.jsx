@@ -8,9 +8,9 @@ const Header = () => {
         M G
       </div>
       <ul className={styles.Nav}>
-        <li><a href='#About'>Home</a></li>
+        {/* <li><a href='#About'>Home</a></li> */}
         <li><a href='#About'>About</a></li>
-        <li><a href='#About'>Service</a></li>
+        <li><a href='#Experience'>Experience</a></li>
         <li><a href='#Contact'>Contact</a></li>
       </ul>
     </header>
