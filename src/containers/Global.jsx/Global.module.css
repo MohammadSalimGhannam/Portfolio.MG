@@ -1,0 +1,10 @@
+.Global {
+    width: 85%;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .Global {
+        width: 95%;
+    }
+}

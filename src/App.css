@@ -1,0 +1,13 @@
+/* Global Styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #1abc9c;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}

@@ -1,0 +1,39 @@
+.Title {
+    font-size: 40px;
+    font-weight: bold;
+    width: fit-content;
+    padding: 10px 30px;
+    margin: 0 auto 40px;
+    border: 1px solid #eee;
+    position: relative;
+    transition: .5s;
+    text-transform: uppercase;
+}
+
+.Title::before, .Title::after {
+    content: '';
+    position: absolute;
+    width: 51%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: .5s;
+    z-index: -1;
+}
+
+.Title::before {
+    top: 0;
+    left: 0;
+}
+
+.Title::after {
+    bottom: 0;
+    right: 0;
+}
+
+.Title:hover {
+    color: white;
+}
+
+.Title:hover::before, .Title:hover::after {
+    height: 100%;
+}

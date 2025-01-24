@@ -1,0 +1,53 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.Logo::first-letter {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.Nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.Nav li a {
+    display: inline-block;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 767px) {
+    .Nav li a {
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+
+.Nav li a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #eee;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: .3s;
+}
+
+.Nav li a:hover::before {
+    width: 100%;
+    height: 100%;
+}
