@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExternalLinkAlt, faChevronDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Card.module.css'
 import {motion} from 'framer-motion'
 
 const Card = (props) => {
+    const [toggle, setToggle] = useState(false)
+    const [styleDescription, setStyle] = useState({opacity: '0', zIndex: '-1'});
 
     const motionPart = {
         offscreen: {
@@ -20,6 +24,16 @@ const Card = (props) => {
         },
         },
     };
+
+    const descriptionToggleHandler = () => {
+        setToggle(!toggle);
+
+        if (!toggle)
+            setStyle({opacity: '1', zIndex: '1'});
+        else 
+            setStyle({opacity: '0', zIndex: '-1'})
+    }
+
     return (
         <motion.div
             className={styles.Card}
@@ -29,12 +43,13 @@ const Card = (props) => {
             viewport={{ once: true, amount: 0.5 }}
             variants={motionPart}
         >
-
-            <div className={styles.Img} >
-                <img src={props.img}/>
+            <span className={styles.Toggle} onClick={descriptionToggleHandler}>{!toggle ? 'See More' : 'See Less'}<FontAwesomeIcon icon={!toggle ? faChevronDown : faTimes}/></span>
+            <div className={styles.Description} style={styleDescription}>{props.description}</div>
+            <div className={styles.Img}>
+                <img src={props.img} alt={props.alt}/>
             </div>
             <div className={styles.Info}>
-                <h3>{props.Title}</h3>
+                <h3><a href={props.url} target="_blank" aria-label="View My Projects"><FontAwesomeIcon icon={faExternalLinkAlt}/></a> {props.Title}</h3>
                 <p><strong>Role: </strong>{props.Role}</p>
                 <p><strong>Technologies: </strong>{props.Technologies}</p>
             </div>

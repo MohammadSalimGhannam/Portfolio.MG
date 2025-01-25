@@ -10,9 +10,6 @@
     border-radius: 6px;
     position: relative;
 }
-/* .CopyText p:first-child {
-
-} */
 
 .CopyText span {
     position: absolute;
@@ -24,7 +21,6 @@
     align-items: center;
     font-size: 20px;
 }
-
 
 .CopyText p:last-child {
     font-size: 18px;

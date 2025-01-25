@@ -1,13 +1,14 @@
 import React,{useEffect} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {motion} from 'framer-motion'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHtml5, faCss3Alt, faJsSquare, faReact, faPython, faGitAlt, faBootstrap, faSass} from '@fortawesome/free-brands-svg-icons';  
+
 import Title from '../Section.Components/Title/Title'
 import SubTitle from '../Section.Components/SubTitle/SubTitle'
 import styles from './About.module.css'
+import logo from '../../assets/logo.png'
 
-const About = (props) => {
+const About = () => {
 
     const rotationAnimation = {
         rotate: 360,
@@ -79,7 +80,7 @@ const About = (props) => {
                         whileInView="onscreen"
                         viewport={{ once: true, amount: 0.5 }}
                         variants={rightPart}
-                        style={{overflow: 'hidden'}}
+                        style={{overflow: 'hidden', padding: '0 10px 10px'}}
                     >
                     <SubTitle title='Skills'/>
                     <motion.div
@@ -90,7 +91,7 @@ const About = (props) => {
                         <div className={styles.Skill}><FontAwesomeIcon className={styles.Icon} icon={faCss3Alt}/></div>
                         <div className={styles.Skill}><FontAwesomeIcon className={styles.Icon} icon={faJsSquare}/></div>
                         <div className={styles.Skill}><FontAwesomeIcon className={styles.Icon} icon={faReact}/></div>
-                        <div className={styles.Skill}></div>
+                        <div className={styles.Skill}><img src={logo} alt="logo"/></div>
                         <div className={styles.Skill}><FontAwesomeIcon className={styles.Icon} icon={faPython}/></div>
                         <div className={styles.Skill}><FontAwesomeIcon className={styles.Icon} icon={faGitAlt}/></div>
                         <div className={styles.Skill}><FontAwesomeIcon className={styles.Icon} icon={faBootstrap}/></div>

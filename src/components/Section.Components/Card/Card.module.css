@@ -1,37 +1,45 @@
 .Card {
-    position: relative;
+    padding: 10px;
     background-color: #eee;
     border-radius: 6px;
-    overflow: hidden;
+    position: relative;   
 }
 
-.Card::after {
-    content: '';
-    content: attr(description);
+.Toggle {
+    width: 85px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;  
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    gap: 10px;
+}
+
+.Description {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 0;
     height: 0;
-    left: 0;    
-    top: 0;
+    left: 10px;    
+    top: 10px;
     line-height: 1.6;
     background-color: var(--primary-color);
     text-align: justify;
     box-sizing: border-box;
     transition: .5s;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     padding: 20px;
+    border-radius: 6px;
     opacity: 0;
     z-index: -1;
 }
-
-.Card:hover::after {
-    opacity: 1;
-    z-index: 1;
-}   
 
 .Img {
     width: 100%;
@@ -39,10 +47,10 @@
 
 .Img img {
     max-width: 100%;
+    border-radius: 6px;
 }
 
 .Info {
-    padding: 0 20px;
     line-height: 1.5;
 }
 
@@ -50,4 +58,9 @@
     .Info {
         text-align: center;
     }
+}
+
+.Info a {
+    color: var(--primary-color);
+    visibility: unset;
 }

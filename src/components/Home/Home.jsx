@@ -3,9 +3,10 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import {motion} from 'framer-motion';
 
 import styles from './Home.module.css'
-import img from '../../assets/Profile.jpg'
+import imgDisk from '../../assets/ProfileDisk.jpg'
+import imgMobile from '../../assets/ProfileMobile.jpg'
 
-const Home = (props) => {
+const Home = () => {
     
     const leftPart = {
         offscreen: {
@@ -49,12 +50,13 @@ const Home = (props) => {
                 variants={leftPart}
             >
                 <div className={styles.Profile}>
-                    <img src={img}/>
+                    <img src={imgMobile} alt='Profile Image'/>
                 </div>
-                <h2 className={styles.Name}>MOHAMMAD GHANNAM</h2>
-                <p className={styles.jopTitle}>front-end Dev</p>
+                <h3 className={styles.Name}>MOHAMMAD GHANNAM</h3>
+                <p className={styles.jopTitle}>Software Engineer</p>
                 <div className={styles.Baio}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maiores reprehenderit aspernatur dolor optio libero numquam rem sapiente corporis, eveniet nihil repellat, tempora praesentium labore ut illo, natus aut esse.
+                    Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Et maiores reprehenderit aspernatur.
                 </div>
             </motion.div>
             <motion.div 
@@ -64,7 +66,7 @@ const Home = (props) => {
                 viewport={{ once: true, amount: 0.5 }}
                 variants={rightPart}
             >
-                <LazyLoadImage className={styles.img} src={img} alt="Profile"/>
+                <LazyLoadImage className={styles.img} src={imgDisk} alt='Profile Image'/>
             </motion.div>
         </div>
     );

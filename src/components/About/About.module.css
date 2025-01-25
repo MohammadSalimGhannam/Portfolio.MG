@@ -96,6 +96,10 @@
     }
 }
 
+.Parent img {
+    max-width: 100%;
+}
+
 .Parent .Skill:nth-child(1) {
     grid-area: 1/ 2/ 1/ 4;
     color: #E44D26;

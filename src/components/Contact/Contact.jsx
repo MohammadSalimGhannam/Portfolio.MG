@@ -15,7 +15,6 @@ const Contact = (props) => {
     const [success, setSuccess] = useState(false);  
     const [error, setError] = useState(false);  
 
-    // Initialize EmailJS with Public Key  
     emailjs.init('BTq3qeetewBboOdDv');
 
     const handleSubmit = (e) => {  
@@ -89,7 +88,7 @@ const Contact = (props) => {
                 >
                     <SubTitle title='Cntact Info'/>
                     <div>
-                        <CopyText text='0984 166 888' icon='phone'/>
+                        <CopyText text='+963 984 166 888 / 0966 602 287' icon='phone'/>
                         <CopyText text='mohammadyl69ghannam@gmail.com' icon='email'/>
                     </div>
                 </motion.div>

@@ -5,10 +5,12 @@
     border-bottom: 2px solid #ddd;
 }
 
-.Logo::first-letter {
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--primary-color);
+.Logo {
+    width: 50px;
+}
+
+.Logo img {
+    width: 100%;
 }
 
 .Nav {
