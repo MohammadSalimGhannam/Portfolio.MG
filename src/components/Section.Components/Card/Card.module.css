@@ -17,6 +17,7 @@
     align-items: center;
     background-color: #eee;
     gap: 10px;
+    top: 9px;
 }
 
 .Description {
@@ -58,6 +59,10 @@
     .Info {
         text-align: center;
     }
+    .Description {
+        font-size: 14px;
+    }
+
 }
 
 .Info a {

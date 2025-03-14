@@ -1,6 +1,21 @@
 .Experience {
-    padding: 120px 20px 0;
+    padding: 120px 20px 20px;
     min-height: calc(100vh - 120px);
+    
+    background: 
+    linear-gradient(
+      45deg,
+      rgba(200, 200, 200, 0.1) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(200, 200, 200, 0.1) 50%,
+      rgba(200, 200, 200, 0.1) 75%,
+      transparent 75%
+    ),
+    white;
+    background-size: 20px 20px;
+    position: relative;
+    z-index: 0;
 }
 
 .ExperienceContainer {
@@ -11,7 +26,7 @@
 
 @media (max-width: 767px) {
     .ExperienceContainer {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
     }
 }
 

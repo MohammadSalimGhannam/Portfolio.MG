@@ -66,7 +66,10 @@ const Home = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 variants={rightPart}
             >
-                <LazyLoadImage className={styles.img} src={imgDisk} alt='Profile Image'/>
+                <LazyLoadImage 
+                    className={styles.img}
+                    src={imgDisk}
+                    alt='Profile Image'/>
             </motion.div>
         </div>
     );

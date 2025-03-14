@@ -10,6 +10,12 @@
     text-transform: uppercase;
 }
 
+@media (max-width: 767px) {
+    .Title {
+        font-size: 30px;
+    }
+}
+
 .Title::before, .Title::after {
     content: '';
     position: absolute;
@@ -17,7 +23,7 @@
     height: 3px;
     background-color: var(--primary-color);
     transition: .5s;
-    z-index: -1;
+    z-index: -100;
 }
 
 .Title::before {

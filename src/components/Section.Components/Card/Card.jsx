@@ -6,8 +6,8 @@ import styles from './Card.module.css'
 import {motion} from 'framer-motion'
 
 const Card = (props) => {
-    const [toggle, setToggle] = useState(false)
-    const [styleDescription, setStyle] = useState({opacity: '0', zIndex: '-1'});
+    const [toggle, setToggle] = useState(props.descriptionEnable)
+    const [styleDescription, setStyle] = useState(props.descriptionEnable ? {opacity: '1', zIndex: '1'} : {opacity: '0', zIndex: '-1'});
 
     const motionPart = {
         offscreen: {
