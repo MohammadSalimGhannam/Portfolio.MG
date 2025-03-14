@@ -9,7 +9,7 @@ import Experience from './components/Experience/Experience';
 
 function App() {
   return (
-    <div className="App" style={{minWidth: '100%'}}>
+    <div className="App">
       <Global>
         <Header />
         <Home/>
