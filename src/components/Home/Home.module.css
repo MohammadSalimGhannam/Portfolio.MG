@@ -1,22 +1,20 @@
 .Home {
-    padding: 0 20px 120px;
+    padding: 120px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: calc(100vh - 180px);
     background: 
-    /* Gradient overlay (adjust angle/colors as needed) */
     linear-gradient(
-      45deg,
-      rgba(200, 200, 200, 0.1) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(200, 200, 200, 0.1) 50%,
-      rgba(200, 200, 200, 0.1) 75%,
-      transparent 75%
-    ),
-    /* Base color (will be overridden by nth-child) */
-    white;
+            45deg,
+            rgba(200, 200, 200, 0.1) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(200, 200, 200, 0.1) 50%,
+            rgba(200, 200, 200, 0.1) 75%,
+            transparent 75%
+            ),
+            white;
     background-size: 20px 20px;
     position: relative;
     z-index: 0;
@@ -68,7 +66,7 @@
 }
 
 .jopTitle {
-    margin-top: -17px;
+    margin-bottom: 17px;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;

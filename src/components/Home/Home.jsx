@@ -41,7 +41,7 @@ const Home = () => {
     };
     
     return (
-        <div className={styles.Home}>
+        <div className={styles.Home} id='Home'>
             <motion.div 
                 className={styles.Text}
                 initial="offscreen"
@@ -55,8 +55,10 @@ const Home = () => {
                 <h3 className={styles.Name}>MOHAMMAD GHANNAM</h3>
                 <p className={styles.jopTitle}>Software Engineer</p>
                 <div className={styles.Baio}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Et maiores reprehenderit aspernatur.
+                    Passionate Software Engineer with a strong foundation in developing
+                    scalable web applications and intuitive user interfaces. Experienced
+                    in modern front-end technologies, always eager to solve complex problems
+                    and build innovative solutions
                 </div>
             </motion.div>
             <motion.div 

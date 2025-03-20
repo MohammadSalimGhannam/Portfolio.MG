@@ -9,6 +9,7 @@ import RoadEyeModel from '../../assets/RoadEyeModel.png'
 import RoadEyeApp from '../../assets/RoadEyeApp.png'
 import familyTree from '../../assets/family-tree.png'
 import Portfolio from '../../assets/Portfolio.png'
+import dental from '../../assets/DentalClinicManagement.png'
 
 const Experience = () => {
     return (
@@ -67,6 +68,16 @@ const Experience = () => {
                 Role="Developer"
                 Technologies="React, Vite, JavaScript, HTML, CSS, Git, GitHub"
                 description="Designed and developed a personal portfolio website to showcase my skills, projects, and experience. Built with React and Vite for a fast and responsive user experience. Deployed the website using GitHub Pages and managed the codebase with Git and GitHub."
+                descriptionEnable={false}
+            />
+            <Card 
+                img={dental}
+                alt={dental}
+                url='https://github.com/MohammadSalimGhannam/DentalClinicManagement'
+                Title="Dental Clinic Management"
+                Role="Developer"
+                Technologies="React, Vite, JavaScript, HTML, CSS, Git, GitHub"
+                description="Designed and developed a comprehensive Dental Clinic Management System to streamline patient management, appointment scheduling, and billing processes, The application features patient records management, real-time appointment booking, and invoicing capabilities, enhancing the overall efficiency of clinic operations. maintained the codebase using Git and GitHub for version control and collaboration."
                 descriptionEnable={false}
             />
             </div>

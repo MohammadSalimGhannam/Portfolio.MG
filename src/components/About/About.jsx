@@ -21,7 +21,7 @@ const About = () => {
 
     const leftPart = {
         offscreen: {
-        x: -100,
+        x: 100,
         opacity: 0,
         },
         onscreen: {
@@ -37,7 +37,7 @@ const About = () => {
     
     const rightPart = {
         offscreen: {
-        x: 100,
+        x: -100,
         opacity: 0,
         },
         onscreen: {
@@ -68,12 +68,12 @@ const About = () => {
                         <p>Bachelor of Informatics Engineering</p>
                         <p>Cumulative GPA: 3.50/4.00</p>
                     </div>
-                    <div className={styles.Edu}>
+                    {/* <div className={styles.Edu}>
                         <h2>syrian virtual university</h2>
                         <p>2025 _ 2027</p>
                         <p>master of artificial intelligence</p>
                         <p>Cumulative GPA: 3.50/4.00</p>
-                    </div>
+                    </div> */}
                 </motion.div>
                 <motion.div 
                         initial="offscreen"

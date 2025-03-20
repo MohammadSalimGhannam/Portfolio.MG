@@ -6,6 +6,8 @@ import Home from './components/Home/Home'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact';
 import Experience from './components/Experience/Experience';
+import RetyrnHome from './components/Section.Components/ReturnHome'
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <About/>
         <Experience/>
         <Contact/>
+        <RetyrnHome/>
       </Global>
     </div>
   );
