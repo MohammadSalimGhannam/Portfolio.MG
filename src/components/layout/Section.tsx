@@ -21,7 +21,7 @@ export function Section({ id, title, children, className }: SectionProps) {
     <section
       id={id}
       aria-labelledby={headingId}
-      className={cn("py-20 sm:py-28", className)}
+      className={cn("py-16 sm:py-24", className)}
     >
       <Container className="grid gap-10 lg:grid-cols-[12rem_1fr] lg:gap-16">
         <h2

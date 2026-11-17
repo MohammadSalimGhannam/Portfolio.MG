@@ -9,6 +9,16 @@ export const siteConfig = {
   url: "https://mohammadsalimghannam.github.io/Portfolio.MG",
   author: "Mohammad Ghannam",
   email: "e.ms.ghannam@gmail.com",
+  /**
+   * EmailJS powers the contact form (https://www.emailjs.com). These IDs are
+   * public by design; the template receives `from_name1`, `from_email` and
+   * `message`.
+   */
+  emailjs: {
+    serviceId: "service_5ha474o",
+    templateId: "template_dyp6fxm",
+    publicKey: "BTq3qeetewBboOdDv",
+  },
   socials: {
     github: "https://github.com/MohammadSalimGhannam",
     linkedin: "https://www.linkedin.com/in/msghannam",

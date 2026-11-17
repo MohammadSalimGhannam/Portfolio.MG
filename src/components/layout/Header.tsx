@@ -9,7 +9,6 @@ import { buttonClasses } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { navItems } from "@/config/navigation";
-import { siteConfig } from "@/config/site";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useScrolled } from "@/hooks/useScrolled";
 import { cn } from "@/lib/cn";
@@ -19,12 +18,13 @@ import { useI18n } from "@/providers/i18n";
 
 import { Container } from "./Container";
 
-const sectionIds = navItems.map((item) => item.id);
+// "Contact" gets its own button, so it is left out of the text links.
+const links = navItems.filter((id) => id !== "contact");
 
 export function Header() {
   const { locale, dictionary } = useI18n();
   const scrolled = useScrolled();
-  const active = useActiveSection(sectionIds);
+  const active = useActiveSection(navItems);
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
@@ -32,7 +32,7 @@ export function Header() {
   useEffect(() => {
     if (!menuOpen) return;
     const onKey = (event: KeyboardEvent) => event.key === "Escape" && closeMenu();
-    const desktop = matchMedia("(min-width: 768px)");
+    const desktop = matchMedia("(min-width: 1024px)");
     const onResize = () => desktop.matches && closeMenu();
     document.addEventListener("keydown", onKey);
     desktop.addEventListener("change", onResize);
@@ -60,22 +60,22 @@ export function Header() {
           {dictionary.hero.name}
         </Link>
 
-        <nav aria-label={dictionary.common.mainNav} className="hidden md:block">
+        <nav aria-label={dictionary.common.mainNav} className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            {navItems.map((item) => (
-              <li key={item.id} className="relative">
+            {links.map((id) => (
+              <li key={id} className="relative">
                 <a
-                  href={`#${item.id}`}
-                  aria-current={active === item.id ? "true" : undefined}
+                  href={`#${id}`}
+                  aria-current={active === id ? "true" : undefined}
                   className={cn(
                     "relative block px-3 py-2 text-sm transition-colors",
-                    active === item.id
+                    active === id
                       ? "text-foreground"
                       : "text-muted hover:text-foreground",
                   )}
                 >
-                  {dictionary.nav[item.label]}
-                  {active === item.id && (
+                  {dictionary.nav[id]}
+                  {active === id && (
                     <motion.span
                       layoutId="nav-indicator"
                       transition={spring}
@@ -92,8 +92,8 @@ export function Header() {
           <LanguageSwitcher />
           <ThemeToggle />
           <a
-            href={`mailto:${siteConfig.email}`}
-            className={buttonClasses("primary", "ms-2 hidden h-9 px-4 md:inline-flex")}
+            href="#contact"
+            className={buttonClasses("primary", "ms-2 hidden h-9 px-4 lg:inline-flex")}
           >
             {dictionary.nav.contact}
           </a>
@@ -105,7 +105,7 @@ export function Header() {
             aria-label={
               menuOpen ? dictionary.common.closeMenu : dictionary.common.openMenu
             }
-            className={buttonClasses("ghost", "text-xl md:hidden")}
+            className={buttonClasses("ghost", "text-xl lg:hidden")}
           >
             {menuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -121,29 +121,33 @@ export function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease }}
-            className="overflow-hidden md:hidden"
+            className="overflow-hidden lg:hidden"
           >
             <Container as="ul" className="flex flex-col gap-1 pt-2 pb-6">
-              {navItems.map((item) => (
-                <li key={item.id}>
+              {links.map((id) => (
+                <li key={id}>
                   <a
-                    href={`#${item.id}`}
+                    href={`#${id}`}
                     onClick={(event) => {
                       event.preventDefault();
                       closeMenu();
                       // Wait for the menu to collapse so the header height is final.
-                      setTimeout(() => scrollToSection(item.id), 320);
+                      setTimeout(() => scrollToSection(id), 320);
                     }}
                     className="block rounded-xl px-3 py-3 text-base hover:bg-foreground/5"
                   >
-                    {dictionary.nav[item.label]}
+                    {dictionary.nav[id]}
                   </a>
                 </li>
               ))}
               <li className="mt-2">
                 <a
-                  href={`mailto:${siteConfig.email}`}
-                  onClick={closeMenu}
+                  href="#contact"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    closeMenu();
+                    setTimeout(() => scrollToSection("contact"), 320);
+                  }}
                   className={buttonClasses("primary", "w-full")}
                 >
                   {dictionary.nav.contact}

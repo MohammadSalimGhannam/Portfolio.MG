@@ -36,14 +36,15 @@ src/
 │   ├── layout/                # Header, Footer, Container, Section
 │   ├── motion/                # reusable animation wrappers
 │   └── ui/                    # Button, ThemeToggle, LanguageSwitcher…
-├── config/                    # site facts (links, email) and navigation
+├── config/                    # site facts (links, email, EmailJS) and navigation
+├── data/                      # experience, projects, skills, education (non-text data)
 ├── hooks/                     # small reusable React hooks
 ├── i18n/
 │   ├── config.ts              # registered languages
 │   └── dictionaries/          # en.ts (reference), ar.ts, tr.ts
 ├── lib/                       # helpers: cn(), fonts, motion presets
 ├── providers/                 # theme, i18n and motion providers
-├── sections/                  # page sections: hero, about, …
+├── sections/                  # hero, about, experience, projects, skills, education, contact
 └── styles/
     ├── theme.css              # ← all colours, for light and dark
     └── globals.css
@@ -56,6 +57,14 @@ seven tokens (`background`, `surface`, `foreground`, `muted`, `border`, `primary
 `primary-foreground`), used in components as `bg-background`, `text-muted`, etc.
 
 **Edit text** — every visible sentence lives in `src/i18n/dictionaries/<lang>.ts`.
+
+**Add a job, project or skill** — add an entry to the matching file in `src/data/` (dates,
+links, technologies) and its texts under the same id in every dictionary. For example, a
+new project needs an entry in `src/data/projects.ts` and `projects.items.<id>` in `en.ts`,
+`ar.ts` and `tr.ts`; TypeScript points out any dictionary you forget.
+
+**Contact form** — sent through [EmailJS](https://www.emailjs.com) with the IDs in
+`src/config/site.ts`.
 
 **Add a language**
 

@@ -109,3 +109,15 @@ export const TelegramIcon = (props: IconProps) => (
     <path d="M21.94 4.3 18.9 18.67c-.23 1.01-.83 1.26-1.68.78l-4.63-3.41-2.23 2.15c-.25.25-.46.46-.94.46l.33-4.71 8.58-7.75c.37-.33-.08-.52-.58-.19L7.15 12.69l-4.56-1.43c-.99-.31-1.01-.99.21-1.47L20.6 2.94c.83-.31 1.55.19 1.34 1.36Z" />
   </Icon>
 );
+
+export const ArrowUpRightIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M7 17 17 7M8 7h9v9" />
+  </Icon>
+);
+
+export const SendIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <path d="M21 3 10 14M21 3l-6.5 18-4-7.5L3 9.5 21 3Z" />
+  </Icon>
+);
