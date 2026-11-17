@@ -1,0 +1,33 @@
+/*
+ * Colour tokens — the only place colours are defined.
+ * Change a value here and the whole site follows, in both themes.
+ *
+ *   background          page background
+ *   surface             raised areas (menus, image frames)
+ *   foreground          main text
+ *   muted               secondary text
+ *   border              lines and outlines
+ *   primary             links, buttons, highlights
+ *   primary-foreground  text on top of `primary`
+ */
+
+:root,
+[data-theme="light"] {
+  --background: #f6f7f9;
+  --surface: #ffffff;
+  --foreground: #121721;
+  --muted: #5a6372;
+  --border: #dfe3e8;
+  --primary: #1e50c8;
+  --primary-foreground: #ffffff;
+}
+
+[data-theme="dark"] {
+  --background: #0f1318;
+  --surface: #161b22;
+  --foreground: #e7eaee;
+  --muted: #98a1ae;
+  --border: #262d37;
+  --primary: #7ea2ff;
+  --primary-foreground: #0f1318;
+}
