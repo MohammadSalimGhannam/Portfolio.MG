@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+/* `dark:` utilities follow the data-theme attribute, not the OS setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Expose the tokens as Tailwind colours: bg-background, text-muted, border-border… */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* Latin/Turkish glyphs come from Plex Sans, Arabic glyphs from Plex Sans Arabic. */
+  --font-sans:
+    var(--font-plex-sans), var(--font-plex-arabic), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --container-content: 72rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Arabic script needs a little more room between lines. */
+  :lang(ar) body {
+    line-height: 1.75;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-primary;
+  }
+
+  /* Sections reached by anchor links stop below the sticky header. */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  .theme-switching,
+  .theme-switching * {
+    transition: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
